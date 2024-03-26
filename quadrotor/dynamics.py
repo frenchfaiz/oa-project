@@ -21,7 +21,7 @@ class QuadrotorState:
     # angular velocity (r, p, q)  [rad / s]
     angular_velocity: np.ndarray = field(default_factory=lambda: np.zeros(3))
 
-    def to_state_vector(self) -> np.ndarray:
+    def to_state_vector(self) -> np.ndarray: #hstack data structure stacks arrays in sequence horizontally (column wise)
         return np.hstack([
             self.position,
             self.velocity,
